@@ -3,6 +3,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="CSS/accueil.css">
         <link rel="stylesheet" href="CSS/commun.css">
+        <link rel="stylesheet" href="CSS/caroussel.css">
     </head>
     <body>
         <nav id="navbar">
@@ -25,8 +26,15 @@
         <div id="movies">
             <div id="nbmovies"></div>
             <div id="container_movies"></div>
+            <a class="next" onclick="showSlides(pass = 1)">&#10095;</a>
+            <a class="prev" onclick="showSlides(slideIndex += -2, pass = 1)">&#10094;</a>
         </div>
+        <div id="container_dots" style="text-align:center">
+            
+        </div>
+        <div id="test"></div>
     </body>
     
     <script type="text/javascript" src="JS/Movies.js"></script>
+    <script type="text/javascript" src="JS/caroussel.js"></script>
 </html>
