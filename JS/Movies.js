@@ -8,7 +8,7 @@ function append(parent, el) {
     return parent.appendChild(el);
 }
 const test = document.getElementById('test');
-const Movies = document.getElementById('movies');
+const Movies = document.getElementById('container_movies');
 
 function getmovies(){
     // code inutilisé
@@ -25,13 +25,17 @@ function getmovies(){
             data.Search.forEach(element => construction(element));
         })
     .catch(function(error) {
-        console.log(error);
+        nbmovies.innerHTML = "Aucun film ne correspond à votre recherche"
     });
 }
+
+let nbmovies = document.getElementById("nbmovies");
+let i = 0;
 
 function construction(Movie){
 
     // Création des éléments
+    i++;
 
     let Container = createNode('div');
     Container.classList.add("container");
@@ -39,7 +43,7 @@ function construction(Movie){
     let info = createNode('div');
     info.classList.add("info");
 
-    let Title = createNode('a');
+    let Lien = createNode('a');
             
     let img = createNode('img');
     img.id = "poster";
@@ -47,14 +51,15 @@ function construction(Movie){
 
     // Attribution des données
 
-    Title.innerHTML = `${Movie.Title} - ${Movie.Year}`;
-    Title.classList.add("links")
-    Title.setAttribute('href', "Single.html?t="+Movie.Title+"&y="+Movie.Year);
+    Lien.classList.add("links")
+    Lien.setAttribute('href', "Single.html?t="+Movie.Title+"&y="+Movie.Year);
+
+    nbmovies.innerHTML = "Movies found : "+i+"\n (click on a movie poster to show informations about it)".split('\n').join('<br/>');
 
     // Mise en place des éléments
 
-    append(info, Title);
+    append(Lien, img);
+    append(info, Lien);
     append(Container, info);
-    append(Container, img);
     append(Movies, Container);
 }

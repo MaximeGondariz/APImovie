@@ -29,6 +29,10 @@ function getmovie(){
             // Création des éléments
 
             let Movie = data;
+
+            let black = createNode('div');
+            black.classList.add('black')
+
             let li = createNode('li');
             li.id = "ligne";
 
@@ -112,8 +116,9 @@ function getmovie(){
             append(div, img);
             append(div, info);
             append(li, span);
-            append(ul, li);
-            append(ul, div);
+            append(black, li);
+            append(black, div);
+            append(ul, black);
         })
     .catch(function(error) {
         console.log(error);
