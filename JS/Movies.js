@@ -11,12 +11,6 @@ const test = document.getElementById('test');
 const Movies = document.getElementById('container_movies');
 
 function getmovies(){
-    // code inutilisé
-    // var exist = document.getElementsById("ligne");
-    // if(typeof(exist) != 'undefined' && exist != null){
-    //     ul.removeChild(exist);
-    // }
-
     var input = document.getElementById("item").value;
     const url = 'https://www.omdbapi.com/?apikey=f6e256e1&s='+input;
     fetch(url)
@@ -25,7 +19,7 @@ function getmovies(){
             data.Search.forEach(element => construction(element));
         })
     .catch(function(error) {
-        nbmovies.innerHTML = "Aucun film ne correspond à votre recherche"
+        nbmovies.innerHTML = "No movie matches your search"
     });
 }
 
@@ -43,6 +37,8 @@ function construction(Movie){
     let info = createNode('div');
     info.classList.add("info");
 
+    let Titre = createNode('h1')
+
     let Lien = createNode('a');
             
     let img = createNode('img');
@@ -50,6 +46,8 @@ function construction(Movie){
     img.src = Movie.Poster;
 
     // Attribution des données
+
+    Titre.innerHTML = Movie.Title+" - "+Movie.Year;
 
     Lien.classList.add("links")
     Lien.setAttribute('href', "Single.html?t="+Movie.Title+"&y="+Movie.Year);
@@ -59,6 +57,7 @@ function construction(Movie){
     // Mise en place des éléments
 
     append(Lien, img);
+    append(info, Titre);
     append(info, Lien);
     append(Container, info);
     append(Movies, Container);

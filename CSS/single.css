@@ -1,0 +1,102 @@
+body{
+    margin : 0;  
+    color:white;
+    background: rgb(32, 32, 32);
+}
+
+ul{
+    width:600px;
+    height:auto;
+    margin:auto;
+    position : relative;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(to bottom right, rgba(255,0,228,1) 0%, rgba(0,0,0,1) 50%, rgba(0,255,248,1) 100%);
+    padding:5px;
+    border-radius: 1em;
+}
+
+#navbar{
+    width:auto;
+    height:auto;
+    display:flex;
+    margin:auto;
+    flex-direction: row;
+    justify-content: center;
+    color : white;
+    padding: 5px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(to bottom right, rgba(255,0,228,1) 0%, rgba(0,0,0,1) 50%, rgba(0,255,248,1) 100%);
+    border-bottom-right-radius:1em ;
+    border-bottom-left-radius:1em ;
+    margin-bottom: 30px;
+}
+
+#menu{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-radius: 1em;
+}
+
+#lien{
+    width: 30%;
+    display:flex;
+    justify-content: space-around;
+}
+
+#lien a{
+    color:white;
+    font-size:20px;
+    font-weight:600;
+    text-decoration: underline;
+}
+
+#ligne{
+    height:130px;
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    padding:15px;
+    padding-left:30px;
+}
+
+#detail{
+    width:auto;
+    margin-left:30px;
+    display : flex;
+    justify-content: center;
+}
+
+#info{
+    width : 300px;
+    margin-left : 30px;
+}
+
+#poster{
+    width:300px;
+    height:485px;
+}
+
+.black{
+    width:100%;
+    height:100%;
+    background-color: black;
+    border-radius: 1em;
+}
+
+@media (max-width:740px){
+    #detail{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:1040px){
+    #lien{
+        width:60%;
+    }
+}
